@@ -11,7 +11,7 @@ The output set of images (segmented and its corresponding rgb image) are stored 
 
 Default setup : (by me)
 
-* ! No. of frames from sensor per second = 1     
+* ! No. of frames from sensor per second = 3     
 * @ No. of spectators = 60
 * @ spawn_point = random
 
