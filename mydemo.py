@@ -13,21 +13,11 @@ import carla
 import random
 import time
 import numpy as np
-import cv2
 
-IM_WIDTH = 640
-IM_HEIGHT = 480
+IM_WIDTH = 512
+IM_HEIGHT = 512
 RGB = 'rgb'
 SEG = 'semantic_segmentation'
-
-'''def process_img(image):
-    i = np.array(image.raw_data)
-    i2 = i.reshape((IM_HEIGHT, IM_WIDTH, 4))
-    i3 = i2[:, :, :3]
-    cv2.imshow("", i3)
-    cv2.waitKey(1)
-    return i3/255.0
-'''
 
 
 actor_list = []
@@ -63,7 +53,7 @@ try:
         camera_blueprint.set_attribute('image_size_x', f'{IM_WIDTH}')
         camera_blueprint.set_attribute('image_size_y', f'{IM_HEIGHT}')
         camera_blueprint.set_attribute('fov', '90')
-        camera_blueprint.set_attribute('sensor_tick', '1.0')
+        camera_blueprint.set_attribute('sensor_tick', '3.0')
         # Adjust camera relative to vehicle
         # spawn the camera and attach to vehicle.
         camera_spawn_point = carla.Transform(carla.Location(x=2.5, z=1))
@@ -87,7 +77,7 @@ try:
     camera_rgb.listen(lambda image: image.save_to_disk('output/rgb/%06d.png' % image.timestamp))
     camera_seg.listen(lambda image: image.save_to_disk('output/seg/%06d.png' % image.timestamp, cc))
     # makes the before instruction run for given seconds, so here the sensor takes input for 1000 sec and since we sampled for 1 sec we get 1000 frames
-    time.sleep(1000)
+    time.sleep(1200)
 
 finally:
     print('destroying actors')
