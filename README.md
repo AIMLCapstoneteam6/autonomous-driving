@@ -17,3 +17,7 @@ Default setup : (by me)
 
 @ --> can change
 ! --> do not change
+
+
+
+Go through the 'detailed explanation.docx for more details( about the scope of this project, model description, etc)
