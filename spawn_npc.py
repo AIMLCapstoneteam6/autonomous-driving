@@ -11,6 +11,7 @@
 import glob
 import os
 import sys
+import mydemo
 
 try:
     sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg' % (
@@ -66,7 +67,7 @@ def main():
 
     try:
 
-        world = client.get_world()
+        world = client.load_world('Town06')
         blueprint = world.get_blueprint_library()
         blueprints = blueprint.filter('vehicle.*')
 
@@ -107,7 +108,7 @@ def main():
             else:
                 actor_list.append(response.actor_id)
 
-        import mydemo        
+        mydemo.sensor_record(client,world)        
         print('spawned %d vehicles, press Ctrl+C to exit.' % len(actor_list))
 
         
