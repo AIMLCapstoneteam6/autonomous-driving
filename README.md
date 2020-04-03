@@ -21,3 +21,6 @@ Default setup : (by me)
 
 
 Go through the 'detailed explanation.docx for more details( about the scope of this project, model description, etc)
+
+
+The main_file.ipynb contains the full code for segmentation, we have tried semantic segmentation on different architectures Unet,FCN-vgg16,FCN-vgg19,FCN-resnet50.
